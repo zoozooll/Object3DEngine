@@ -8,7 +8,7 @@ android {
     buildToolsVersion "30.0.3"
 
     defaultConfig {
-        applicationId "com.mouselee.myapplication"
+        applicationId "com.mouselee.threedimengine"
         minSdkVersion 25
         targetSdkVersion 30
         versionCode 1
