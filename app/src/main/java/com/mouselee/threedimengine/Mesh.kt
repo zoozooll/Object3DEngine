@@ -1,4 +1,4 @@
 package com.mouselee.threedimengine
 
-class Mesh {
+open class Mesh {
 }

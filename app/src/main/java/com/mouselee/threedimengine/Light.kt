@@ -1,4 +1,4 @@
 package com.mouselee.threedimengine
 
-open class Material {
+open class Light : Object3D() {
 }

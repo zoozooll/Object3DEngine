@@ -5,7 +5,7 @@ class Transform {
 
     var rotation = Vector3()
 
-    var scale = Vector3()
+    var scale = Vector3(1F)
 
     var povit = Vector3()
 

@@ -1,5 +1,9 @@
 package com.mouselee.threedimengine
 
-class Object3D {
+open class Object3D {
+    var transform: Transform = Transform()
 
+    var mesh: Mesh? = null
+
+    var material: Material? = null
 }

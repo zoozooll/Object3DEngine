@@ -1,4 +1,4 @@
 package com.mouselee.threedimengine
 
-open class Material {
+open class Camera : Object3D() {
 }
