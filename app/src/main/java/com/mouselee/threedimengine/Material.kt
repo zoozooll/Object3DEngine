@@ -5,6 +5,8 @@ import android.opengl.GLES20
 import android.opengl.GLES30.*
 import com.mouselee.threedimengine.sample.ShaderUtil
 import java.nio.Buffer
+import java.nio.IntBuffer
+import java.nio.ShortBuffer
 
 open class Material {
 
@@ -264,8 +266,37 @@ open class Material {
         }
     }
 
-    fun draw() {
+    fun drawArrays(mode: Int, count: Int) {
+        enableVertexAttribArray()
+        glDrawArrays(mode, 0, count)
+        disableVertexAttribArray()
+    }
 
+    fun drawElements(mode: Int, count: Int, indices: Buffer) {
+        enableVertexAttribArray()
+        val indexType = when(indices) {
+            is ShortBuffer -> GL_UNSIGNED_SHORT
+            is IntBuffer -> GL_UNSIGNED_INT
+            else -> 0
+        }
+        glDrawElements(mode, count, indexType, indices)
+        disableVertexAttribArray()
+    }
+
+    fun release() {
+        glDeleteProgram(mProgram)
+    }
+
+    private fun enableVertexAttribArray() {
+        attributeLocationMap.forEach { (t, u) ->
+            glEnableVertexAttribArray(u.location)
+        }
+    }
+
+    private fun disableVertexAttribArray() {
+        attributeLocationMap.forEach { (t, u) ->
+            glDisableVertexAttribArray(u.location)
+        }
     }
 
     inner class LocationValue {

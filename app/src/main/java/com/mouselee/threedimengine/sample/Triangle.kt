@@ -111,22 +111,8 @@ class Triangle(mv: View) {
         var mMMatrix = FloatArray(16) //具体物体的移动旋转矩阵，包括旋转、平移、缩放
         fun getFianlMatrix(spec: FloatArray?): FloatArray {
             mMVPMatrix = FloatArray(16)
-            Matrix.multiplyMM(
-                mMVPMatrix,
-                0,
-                mVMatrix,
-                0,
-                spec,
-                0
-            )
-            Matrix.multiplyMM(
-                mMVPMatrix,
-                0,
-                mProjMatrix,
-                0,
-                mMVPMatrix,
-                0
-            )
+            Matrix.multiplyMM(mMVPMatrix, 0, mVMatrix, 0, spec, 0)
+            Matrix.multiplyMM(mMVPMatrix, 0, mProjMatrix, 0, mMVPMatrix, 0)
             return mMVPMatrix!!
         }
     }
