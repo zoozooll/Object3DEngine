@@ -1,9 +1,12 @@
 package com.mouselee.threedimengine
 
-class Vector3() {
+class Vector3 {
     var x = 0F
     var y = 0F
     var z = 0F
+
+    constructor() {
+    }
 
     constructor(all: Float) {
         x = all

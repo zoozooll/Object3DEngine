@@ -1,13 +1,25 @@
 package com.mouselee.threedimengine
 
 class Transform {
-    var position = Vector3()
+    val position = Vector3()
 
-    var rotation = Vector3()
+    val rotation = Vector3()
 
-    var scale = Vector3()
+    val scale = Vector3(1F)
 
-    var povit = Vector3()
+    val pivot = Vector3()
 
-    var parent: Transform? = null
+    val parent: Transform? = null
+
+    private val modelMatrix = FloatArray(16)
+
+    val worldMatrix = FloatArray(16)
+
+    fun updateTransform() {
+
+    }
+
+    private fun calculateModelMatrix() {
+
+    }
 }
